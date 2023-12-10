@@ -14,25 +14,25 @@ public class Necklace{
         necklace = new ArrayList<>();
     }
 
-    public void addStone(String name, int weight) {
+    public void addStone(String name, int weight, int clarity) {
         switch (name.toLowerCase()) {
             case "diamond":
-                necklace.add(new Diamond(weight));
+                necklace.add(new Diamond(weight, clarity));
                 break;
             case "emerald":
-                necklace.add(new Emerald(weight));
+                necklace.add(new Emerald(weight, clarity));
                 break;
             case "ruby":
-                necklace.add(new Ruby(weight));
+                necklace.add(new Ruby(weight, clarity));
                 break;
             case "onyx":
-                necklace.add(new Onyx(weight));
+                necklace.add(new Onyx(weight, clarity));
                 break;
             case "opal":
-                necklace.add(new Opal(weight));
+                necklace.add(new Opal(weight, clarity));
                 break;
             case "pearl":
-                necklace.add(new Pearl(weight));
+                necklace.add(new Pearl(weight, clarity));
                 break;
             default:
                 throw new IllegalArgumentException("We don't have " + name);

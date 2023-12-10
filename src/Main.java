@@ -7,6 +7,8 @@ public class Main {
         necklace.addStone("Diamond", 2);
         necklace.addStone("Pearl", 2);
 
+        necklace.display();
+
         int weight = necklace.getWeight();
         int price = necklace.getPrice();
 

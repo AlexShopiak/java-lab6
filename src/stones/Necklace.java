@@ -53,4 +53,19 @@ public class Necklace{
 
         return price;
     }
+
+    public void display() {
+        System.out.println();
+        for (Stone stone : necklace) {
+            String name = stone.getClass().getSimpleName();
+            int weight = stone.getWeight();
+            System.out.println(name + " " + weight + " carats");
+        }
+        
+        System.out.println();
+        System.out.println("Weight: " + getWeight() + " carats");
+        System.out.println("Price : " + getPrice() + " USD");
+        
+        System.out.println();
+    }
 }

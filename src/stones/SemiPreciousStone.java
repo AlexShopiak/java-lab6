@@ -1,32 +1,26 @@
 package stones;
 
 class SemiPreciousStone extends Stone{
-    SemiPreciousStone(int weight) {
-        super(weight);
+    SemiPreciousStone(int weight, int price) {
+        super(weight, price);
     }
 }
 
 //----------------------------------------
 class Onyx extends SemiPreciousStone{
-    private float price = 0; //todo
- 
     Onyx(int weight) {
-        super(weight);
+        super(weight, 50);
     }
 }
 
 class Opal extends SemiPreciousStone{
-    private float price = 0; //todo
- 
     Opal(int weight) {
-        super(weight);
+        super(weight, 200);
     }
 }
 
 class Pearl extends SemiPreciousStone{
-    private float price = 0; //todo
- 
     Pearl(int weight) {
-        super(weight);
+        super(weight, 100);
     }
 }

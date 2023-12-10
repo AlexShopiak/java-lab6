@@ -1,19 +1,19 @@
 package stones;
 
 class Stone{
-    private int weight;
-    private int price;
+    private int weightInCarats;
+    private int priceByCarat;
 
     Stone(int weight, int price) {
-        this.weight = weight;
-        this.price = price;
+        this.weightInCarats = weight;
+        this.priceByCarat = price;
     }
 
     int getWeight() {
-        return weight;
+        return weightInCarats;
     }
 
     int getPrice() {
-        return price;
+        return priceByCarat * weightInCarats;
     }
 }

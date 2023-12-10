@@ -1,6 +1,7 @@
 package stones;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Necklace{
     private ArrayList<Stone> necklace;
@@ -34,6 +35,20 @@ public class Necklace{
         } 
     }
 
+    public void sortByPrice() {
+        if (necklace.size() > 1) {
+            necklace.sort(new Comparator<Stone>() {
+                @Override
+                public int compare(Stone stone1, Stone stone2) {
+                    return Integer.compare(stone1.getPrice(), stone2.getPrice());
+                }
+            });
+        }
+    }
+
+    public void filterByTransparency() { 
+    }
+
     public int getWeight() {
         int weight = 0;
 
@@ -48,7 +63,7 @@ public class Necklace{
         int price = 0;
 
         for (Stone stone : necklace) {
-            price += stone.getWeight() * stone.getPrice();
+            price += stone.getPrice();
         }
 
         return price;
@@ -59,7 +74,8 @@ public class Necklace{
         for (Stone stone : necklace) {
             String name = stone.getClass().getSimpleName();
             int weight = stone.getWeight();
-            System.out.println(name + " " + weight + " carats");
+            int price = stone.getPrice();
+            System.out.println(name + " " + weight + " carats, " + price + " USD");
         }
         
         System.out.println();

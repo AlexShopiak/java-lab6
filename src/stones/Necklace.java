@@ -87,17 +87,26 @@ public class Necklace{
     public void display(String title) {
         String BOLD_STR = "\u001B[1m";
         String BOLD_END = "\u001B[0m";
-        System.out.println(BOLD_STR + title + BOLD_END);
+        System.out.println(BOLD_STR + title + BOLD_END + "-".repeat(43 - title.length()));
 
         for (Stone stone : necklace) {
             String name = stone.getClass().getSimpleName();
             int weight = stone.getWeight();
+            int clarity = stone.getClarity();
             int price = stone.getPrice();
-            System.out.println(name + " " + weight + " carats, " + price + " USD");
+
+            System.out.print(String.format(" %-9s ", name));
+            System.out.print(String.format("%10s ", weight + " carats"));
+            System.out.print(String.format("%10s ", clarity + "/10 cl"));
+            System.out.print(String.format("%10s ", price + " USD"));
+            System.out.println();
         }
-        
-        System.out.println(BOLD_STR + "Weight: " + BOLD_END + getWeight() + " carats");
-        System.out.println(BOLD_STR + "Price : " + BOLD_END +  getPrice() + " USD");
+        System.out.print(BOLD_STR);
+        System.out.print(String.format("%-10s ", "Total"));
+        System.out.print(String.format("%10s ", getWeight() + " carats"));
+        System.out.print(String.format("%10s ", ""));
+        System.out.print(String.format("%10s ", getPrice() + " USD"));
+        System.out.println(BOLD_END);
         System.out.println();
     }
 
